@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <h1>Javascript Exercises</h1><hr/>
+    <pre>
+      <script>
+        function log(arg) {
+          document.writeln(arg);
+        }
+
+        // Write a binary function that will return the difference of the numbers that were passed in
+        function sub(a, b) {
+          return a - b;
+        }
+
+        // Write a unary function that takes a binary function as the argument and returns a binary function that
+        // takes 2 number arguments and evaluates the original function with the number arguments in reverse order
+        function reverse(func) {
+          return function(x, y) {
+            return func(y, x);
+          };
+        }
+
+        var bus = reverse(sub);
+        log('bus(3, 2) : ' + bus(3, 2)); // -1
+      </script>
+    </pre>
+  </body>
+</html>
