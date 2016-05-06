@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <h1>Javascript Exercises</h1><hr/>
+    <pre>
+      <script>
+        function log(arg) {
+          document.writeln(arg);
+        }
+
+        // Write a binary function that will return the difference of the numbers that were passed in
+        function sub(a, b) {
+          return a - b;
+        }
+
+        // Write a binary function that takes a binary function as the first argument and a number
+        // as the second argument and returns a unary function that returns the evaluation of the 
+        // function and the 2 arguments IN REVERSE ORDER
+        function curryr(func, x) {
+          return function(y) {
+            return func(y, x);
+          };
+        }
+
+        var sub3 = curryr(sub, 3);
+        log('sub3(11) : ' + sub3(11)); // 8
+        log('sub3(3) : ' + sub3(3)); // 0
+      </script>
+    </pre>
+  </body>
+</html>
