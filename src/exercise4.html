@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <h1>Javascript Exercises</h1><hr/>
+    <pre>
+      <script>
+        function log(arg) {
+          document.writeln(arg);
+        }
+
+        // Write a unary function that will return a unary function that returns the value of
+        // a number that is added to the original number
+        function addf(x) {
+          return function(y) {
+            return x + y;
+          };
+        }
+
+        log('addf(3)(4) : ' + addf(3)(4)); // 7
+      </script>
+    </pre>
+  </body>
+</html>
