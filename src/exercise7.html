@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <h1>Javascript Exercises</h1><hr/>
+    <pre>
+      <script>
+        function log(arg) {
+          document.writeln(arg);
+        }
+
+        // Write a binary function that will return the sum of the numbers that were passed in
+        function add(a, b) {
+          return a + b;
+        }
+
+        // Write a binary function that will return the product of the numbers that were passed in
+        function mul(a, b) {
+          return a * b;
+        }
+
+        // Write a binary function that takes a binary function as the first argument and a number
+        // as the second argument and returns a unary function that returns the evaluation of the 
+        // function and the 2 arguments
+        function curry(func, x) {
+          return function(y) {
+            return func(x, y);
+          };
+        }
+
+        // Write a unary function that takes a binary function as an argument and returns a unary function
+        // that takes a number as an argument and returns a unary function that takes a number as an argument
+        // and evaluates the original function and the 2 numbers
+        function liftf(func) {
+          return function(x) {
+            return function(y) {
+              return func(x, y);
+            };
+          };
+        }
+
+        // alternate liftf
+        function liftf2(func) {
+          return function(x) {
+            return curry(func, x);
+          };
+        }
+
+        var laddf = liftf(add);
+        log('laddf(3)(4) : ' + laddf(3)(4)); // 7
+        log('liftf(mul)(5)(6) : ' + liftf(mul)(5)(6)); // 30
+
+        var laddf2 = liftf2(add);
+        log('laddf2(4)(5) : ' + laddf2(4)(5)); // 9
+        log('liftf2(mul)(6)(7) : ' + liftf2(mul)(6)(7)); // 42
+      </script>
+    </pre>
+  </body>
+</html>
