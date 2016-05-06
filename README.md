@@ -5,7 +5,7 @@ Exercises in the Javascript language from a recent training class with Douglas C
 |------|----------------------|---------|
 | [exercise1](src/exercise1.html) | *Identity*. Write a unary function that will return the argument that was passed in. | `identity(3) === 3`|
 | [exercise2](src/exercise2.html) | *Basic math functions*. Write binary functions that will return the sum, difference, and product of the numbers that were passed in. | `(add(3, 4) === 7)`,`(sub(3, 4) === -1)`, `(mul(3, 4) === 12)` |
-| [exercise3](src/exercise3.html) | *Identity function*. Write a binary function that will return a function that returns the value that was passed to the function. | `identityf(3) === 3` |
+| [exercise3](src/exercise3.html) | *Identity function*. Write a binary function that will return a function that returns the value that was passed to the function. | `var three = identityf(3); three() === 3` |
 | [exercise4](src/exercise4.html) | *Add function*. Write a unary function that will return a unary function that returns the value of a number that is added to the original number. | `addf(3)(4) === 7`  |
 | [exercise5](src/exercise5.html) | *Curry*. Write a binary function that takes a binary function as the first argument and a number as the second argument and returns a unary function that returns the evaluation of the function and the 2 arguments. | `var add3 = curry(add, 3); add3(4) === 7` |
 | [exercise6](src/exercise6.html) | *Reverse curry*. Write a binary function that takes a binary function as the first argument and a number as the second argument and returns a unary function that returns the evaluation of the function and the 2 arguments IN REVERSE ORDER. | `var sub3 = curryr(sub, 3); sub3(11) === 8` |
