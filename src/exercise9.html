@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <h1>Javascript Exercises</h1><hr/>
+    <pre>
+      <script>
+        function log(arg) {
+          document.writeln(arg);
+        }
+
+        // Write a binary function that will return the sum of the numbers that were passed in
+        function add(a, b) {
+          return a + b;
+        }
+
+        // Write a binary function that will return the difference of the numbers that were passed in
+        function sub(a, b) {
+          return a - b;
+        }
+
+        // Write a binary function that will return the product of the numbers that were passed in
+        function mul(a, b) {
+          return a * b;
+        }
+
+        // Write a unary function that takes a binary function as an argument and returns a unary function that
+        // takes a number as an argument and evaluates the original function passing the number as both arguments
+        function twice(func) {
+          return function(x) {
+            return func(x, x);
+          };
+        }
+
+        var dbl = twice(add);
+        log('dbl(11) : ' + dbl(11)); // 22
+        var sqr = twice(mul);
+        log('sqr(11) : ' + sqr(11)); // 121
+      </script>
+    </pre>
+  </body>
+</html>
